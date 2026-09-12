@@ -1,0 +1,22 @@
+.load-more-button.is-hidden {
+  display: none;
+}
+
+.load-more-button {
+  display: block;
+  margin: 20px auto;
+  width: 120px;
+  height: 50px;
+  background-color: #4e75ff;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  font-family: 'Montserrat', sans-serif;
+}
+.load-more-button:hover {
+  background-color: #6c8cff;
+}
