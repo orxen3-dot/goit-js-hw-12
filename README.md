@@ -98,13 +98,25 @@ goit-js-hw-12/
    npm install
    ```
 
-4. Start the development server:
+4. Create a local `.env` file from the example:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+5. Add your Pixabay API key to `.env`:
+
+   ```env
+   VITE_PIXABAY_API_KEY=your_pixabay_api_key_here
+   ```
+
+6. Start the development server:
 
    ```bash
    npm run dev
    ```
 
-5. Open the local URL shown in your terminal (Vite uses `http://localhost:5173` by default).
+7. Open the local URL shown in your terminal (Vite uses `http://localhost:5173` by default).
 
 ### Available Scripts
 
@@ -118,9 +130,11 @@ goit-js-hw-12/
 
 This project uses the [Pixabay API](https://pixabay.com/api/docs/) to retrieve images.
 
-**Important:** API credentials should not be committed to a public repository. Before publishing or reusing this project, move the Pixabay API key out of the source code and into an environment variable (for example, `VITE_PIXABAY_API_KEY`), then read it through `import.meta.env` in the Vite application.
+The application reads the key from `import.meta.env.VITE_PIXABAY_API_KEY`. Keep your actual key in the local `.env` file, which is excluded by `.gitignore`. The committed `.env.example` file contains only a placeholder.
 
-If a real API key has already been pushed to a public repository, revoke or regenerate it in your Pixabay account. A Vite environment variable keeps the key out of source files, but it does not make a browser-exposed API key secret after the app is built.
+**Security note:** Vite variables prefixed with `VITE_` are bundled into client-side code and are visible to users in the browser. This configuration prevents accidentally committing the key in source files, but it does not make the key secret in a deployed frontend.
+
+If a real key was previously pushed to a public repository, revoke or regenerate it in your Pixabay account.
 
 ## 🧠 What I Practiced
 
